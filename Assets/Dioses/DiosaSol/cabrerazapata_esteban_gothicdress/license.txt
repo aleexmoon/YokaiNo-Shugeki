@@ -1,0 +1,11 @@
+Model Information:
+* title:	CabreraZapata_Esteban_GothicDress
+* source:	https://sketchfab.com/3d-models/cabrerazapata-esteban-gothicdress-a926d511eafc4c84b9fe09fc6ac1af8c
+* author:	pika459 (https://sketchfab.com/pika459)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "CabreraZapata_Esteban_GothicDress" (https://sketchfab.com/3d-models/cabrerazapata-esteban-gothicdress-a926d511eafc4c84b9fe09fc6ac1af8c) by pika459 (https://sketchfab.com/pika459) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
