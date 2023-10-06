@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:ProgressBar value="50" style="height: 15px; width: 250px; -unity-background-image-tint-color: rgb(178, 0, 5); visibility: visible; overflow: hidden; justify-content: space-between; align-items: stretch; bottom: 420px; background-color: rgb(125, 0, 0); -unity-background-scale-mode: scale-to-fit; position: absolute; left: 5px;" />
+        <ui:Button text="W" display-tooltip-when-elided="true" style="width: 50px; height: 50px; -unity-text-align: middle-center; white-space: nowrap; text-overflow: clip; position: absolute; top: 378px; left: 587px; color: rgb(172, 43, 38);" />
+        <ui:Button text="A" display-tooltip-when-elided="true" enable-rich-text="false" style="width: 50px; height: 50px; -unity-text-align: middle-center; white-space: nowrap; text-overflow: clip; position: absolute; top: 381px; left: 11px; color: rgb(168, 6, 0);" />
+    </ui:VisualElement>
+</ui:UXML>
