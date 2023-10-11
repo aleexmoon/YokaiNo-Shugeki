@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -19,13 +20,26 @@ public class player : MonoBehaviour
 			playerRigid.velocity = -transform.forward * 3 * wb_speed * Time.deltaTime;
 		}
 	}
-	void Update(){
+
+	void LoadSettingsScene()
+    {
+        SceneManager.LoadScene("Settings"); 
+    }
+
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LoadSettingsScene();
+        }
+
 		if(Input.GetKeyDown(KeyCode.W)){
 			playerAnim.SetTrigger("run");
 			playerAnim.ResetTrigger("idle");
 			walking = true;
 			//steps1.SetActive(true);
 		}
+
 		if(Input.GetKeyUp(KeyCode.W)){
 			playerAnim.ResetTrigger("run");
 			playerAnim.SetTrigger("idle");

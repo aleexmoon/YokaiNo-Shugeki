@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SeptimoNivel.unity
     guid: a18ef5135be4cc844adc945ed8f1b8d2
+  - enabled: 1
+    path: Assets/Interfaces/Intro.unity
+    guid: 24a6299b0e2847b42b5cad734dcc5635
+  - enabled: 1
+    path: Assets/Interfaces/Settings.unity
+    guid: a1dfd36e7b8fdc441873bcfd02cecb2e
   m_configObjects: {}

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 0ed7403e82dced7499c776631a14e113, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: bbe9a067686f9ba4bbd3b5e30108b600, type: 2}
   m_HaloStrength: 0.493
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -39546,7 +39546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d58852050e6d9464ebb91f88ff46a76a, type: 3}
       propertyPath: m_Name
-      value: Mutant Roaring
+      value: Reiki
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -44663,7 +44663,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.8113208, g: 0.6517683, b: 0.46229976, a: 0.35686275}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
