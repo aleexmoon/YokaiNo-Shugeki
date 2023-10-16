@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
     public GameObject amuletoModel;
-    public int HP = 100; 
+    public int HP = 100;
+    public Slider healthBar;
     public Animator animator;
+
+    void Update()
+    {
+        healthBar.value = HP;
+    }
     
     public void TakeDamage(int damageAmount)
     {

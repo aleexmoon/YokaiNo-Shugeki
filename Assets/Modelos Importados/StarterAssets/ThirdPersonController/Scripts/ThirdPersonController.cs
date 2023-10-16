@@ -160,19 +160,43 @@ namespace StarterAssets
             GroundedCheck();
             Move();
             AimShoot();
+            PickUp();
+            Inter();
         }
         
         private void AimShoot()
         {
             if (_input.isAiming && Grounded && !_input.sprint)
             {
-                _speed = 0f;
-                _animationBlend = 0f;
                 _animator.SetBool("Aiming", _input.isAiming);
             }
             else
             {
                 _animator.SetBool("Aiming", false);
+            }
+        }
+
+        private void PickUp()
+        {
+            if (_input.isPickup && Grounded && !_input.sprint)
+            {
+                _animator.SetBool("Pickup", _input.isPickup);
+            }
+            else
+            {
+                _animator.SetBool("Pickup", false);
+            }
+        }
+
+        private void Inter()
+        {
+            if (_input.isInter && Grounded && !_input.sprint)
+            {
+                _animator.SetBool("Inter", _input.isInter);
+            }
+            else
+            {
+                _animator.SetBool("Inter", false);
             }
         }
 

@@ -9,6 +9,7 @@ TagManager:
   - Katana
   - Kunai
   - Yokai
+  - GameMusic
   layers:
   - Default
   - TransparentFX

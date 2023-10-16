@@ -13,6 +13,8 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool isAiming;
+		public bool isPickup;
+		public bool isInter;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -49,6 +51,17 @@ namespace StarterAssets
 		{
 			isAiming = value.isPressed;
 		}
+		
+		public void OnInter(InputValue value)
+		{
+			isInter = value.isPressed;
+		}
+		
+		public void OnPickUp(InputValue value)
+		{
+			isPickup = value.isPressed;
+		}
+
 #endif
 
 
