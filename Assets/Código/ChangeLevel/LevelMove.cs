@@ -2,32 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Video;
 
-public class NextSceneWithVideo : MonoBehaviour
+public class nextscene : MonoBehaviour
 {
-    public string sceneName;
-    public VideoPlayer videoPlayer;
-
-    void Start()
-    {
-        videoPlayer = GetComponent<VideoPlayer>();
-        videoPlayer.playOnAwake = false;
-    }
-
+    public string scenename;
+ 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
-            StartCoroutine(PlayVideoAndLoadScene());
+            SceneManager.LoadScene(scenename);
         }
-    }
-
-    IEnumerator PlayVideoAndLoadScene()
-    {
-        videoPlayer.Play();
-        yield return new WaitForSeconds(10f); // Espera 10 segundos (duración del video)
-
-        SceneManager.LoadScene(sceneName); // Carga la siguiente escena
     }
 }

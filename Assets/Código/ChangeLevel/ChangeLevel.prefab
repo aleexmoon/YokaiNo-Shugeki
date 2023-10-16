@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7151546251388515384}
   - component: {fileID: 5011299978837566671}
   - component: {fileID: 3662316404017343370}
-  - component: {fileID: 839396158582364986}
   m_Layer: 0
   m_Name: ChangeLevel
   m_TagString: Untagged
@@ -106,16 +105,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0093655875, y: 0.0094058085, z: 0.04334798}
   m_Center: {x: 0.00033900866, y: -0.000016382197, z: 0.0009979487}
---- !u!114 &839396158582364986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7543523955344585293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0e822d7750cedf42a4fc44e308087fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scenename: SegundoNivel
