@@ -11,6 +11,7 @@ public class PatrollState : StateMachineBehaviour
     NavMeshAgent agent;
     Transform player;
     public float agentSpeed;
+    public int minimalRange; 
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -20,6 +21,7 @@ public class PatrollState : StateMachineBehaviour
         agentSpeed = agent.speed;
         timer = 0;
         randomT = Random.Range (0f, 30f);
+
         GameObject go = GameObject.FindGameObjectWithTag("WayPoints");
         foreach(Transform t in go.transform)
         {
@@ -45,7 +47,7 @@ public class PatrollState : StateMachineBehaviour
         }
 
         float distance = Vector3.Distance(player.position, animator.transform.position);
-        if (distance < 8)
+        if (distance < minimalRange)
         {
             animator.SetBool("isChaising", true);
         }

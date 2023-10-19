@@ -5,16 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - WayPoints
+  - Yokai
   - CinemachineTarget
   - Katana
   - Kunai
-  - Yokai
   - GameMusic
+  - DialogueManager
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Enemy
+  - 
   - Water
   - UI
   - 

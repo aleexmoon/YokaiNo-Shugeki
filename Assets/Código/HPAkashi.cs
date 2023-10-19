@@ -1,29 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HPAkashi : MonoBehaviour
 {
-    public Slider healthBar;
-    public int HP = 100; 
+    public Slider healthBarAkashi;
+    public ParticleSystem particleSystem;
+    public int hpAkashi = 100; 
     public Animator animator;
 
     void Update()
     {
-        healthBar.value = HP;
+        healthBarAkashi.value = hpAkashi;
     }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(int damageEnemy)
     {
-        HP -= damageAmount;
-        if (HP <= 0)
+        hpAkashi -= damageEnemy;
+        if (hpAkashi <= 0)
         {
             animator.SetTrigger("die");
             GetComponent<Collider>().enabled = false;
+            SceneManager.LoadScene("EndGame");
         }
         else 
         {
+            ParticleSystem newParticleSystem = Instantiate(particleSystem, transform.position, Quaternion.identity);
+            newParticleSystem.Play();
+            Destroy(newParticleSystem.gameObject, 2f); // Destruye las partículas después de 1 segundo
             animator.SetTrigger("damage");
         }
     }

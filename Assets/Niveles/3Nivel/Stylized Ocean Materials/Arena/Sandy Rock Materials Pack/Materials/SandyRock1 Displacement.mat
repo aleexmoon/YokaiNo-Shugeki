@@ -108,7 +108,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.08
     - _Phong: 0
-    - _QueueControl: -1
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ShadowLOD: 0.22
     - _SmoothnessTextureChannel: 0

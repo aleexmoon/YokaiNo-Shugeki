@@ -35,4 +35,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ScenesAnim/Ani.unity
     guid: cce35518f6481d942bc26380c67b0a99
+  - enabled: 1
+    path: Assets/Interfaces/EndGame.unity
+    guid: 57f4174301332d146846e01c5f20ab6a
+  - enabled: 1
+    path: Assets/Animaciones/FirstAnimation.unity
+    guid: 6d7c20dc51d94a949b0e12f317ba3c4a
+  - enabled: 1
+    path: Assets/Animaciones/SecondAnimation.unity
+    guid: 4fc81615ee9b5464a8054f3858dde63f
+  - enabled: 1
+    path: Assets/Animaciones/ThirdAnimation.unity
+    guid: d1ceaf070d78bae4a85839d4019ca7a0
   m_configObjects: {}

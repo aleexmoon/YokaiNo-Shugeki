@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 5892ae2eff8cd2743a4caf7b7e0ea791
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Midnight Stories
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 960d7f5a1f933b64b95cb5fd11367b72, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
