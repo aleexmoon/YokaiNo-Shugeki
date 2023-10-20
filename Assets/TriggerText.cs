@@ -6,9 +6,12 @@ public class TriggerText : MonoBehaviour
 {
     public DialogTrigger trigger;
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.CompareTag("Player") == true)
-        trigger.StartDialogue();
+        if (other.CompareTag("Player"))
+        {
+            trigger.StartDialogue();
+            Destroy(gameObject); // Destruye el objeto actual cuando el jugador entra en el área de Trigger
+        }
     }
 }

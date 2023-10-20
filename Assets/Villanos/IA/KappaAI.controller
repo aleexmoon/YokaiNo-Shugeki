@@ -41,6 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentSpeed: 5
+  attackGO: 0
 --- !u!114 &-4413356996149166454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,6 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentSpeed: 5
+  minimalRange: 0
 --- !u!1101 &-4131596167534164285
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -441,6 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentSpeed: 1
+  attackGO: 0
 --- !u!1101 &4466393152531406627
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

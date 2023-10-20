@@ -662,14 +662,14 @@ PrefabInstance:
     - target: {fileID: 2684465694929195155, guid: 5ea30b90fdbe26549bc3759c220016d7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11500000, guid: 985ac698bdaad6643a788bd77f31f6f2, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2684465694929195155, guid: 5ea30b90fdbe26549bc3759c220016d7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: OnLoadButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 2684465694929195155, guid: 5ea30b90fdbe26549bc3759c220016d7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: 
+      value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2684465694929195155, guid: 5ea30b90fdbe26549bc3759c220016d7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -677,7 +677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2684465694929195155, guid: 5ea30b90fdbe26549bc3759c220016d7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2919037340900052477, guid: 5ea30b90fdbe26549bc3759c220016d7, type: 3}
       propertyPath: m_Sprite
@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myButton: {fileID: 1085795810}
-  sceneToLoad: PrimerNivel
+  sceneToLoad: SegundoNivel
 --- !u!1 &1398865540
 GameObject:
   m_ObjectHideFlags: 0

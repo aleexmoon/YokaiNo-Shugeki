@@ -2,50 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class PressKeyOpenDoor : MonoBehaviour
+public class Puerta : MonoBehaviour
 {
-    public GameObject Instruction;
-    public GameObject AnimeObject;
-    public GameObject ThisTrigger;
-    public AudioSource DoorOpenSound;
-    public bool Action = false;
+    public float speed;
+    public float openPositionX;
+    public float closedPositionX;
+    
+    public bool puedeAbrir;
+    public bool abrir;
 
     void Start()
     {
-        Instruction.SetActive(false);
-
+        closedPositionX = transform.position.x;
+        openPositionX = closedPositionX + 2f; // Cambia el valor 2f según la distancia que deseas que se desplace la puerta.
     }
-
-    void OnTriggerEnter(Collider collision)
-    {
-        if (collision.transform.tag == "Player")
-        {
-            Instruction.SetActive(true);
-            Action = true;
-        }
-    }
-
-    void OnTriggerExit(Collider collision)
-    {
-        Instruction.SetActive(false);
-        Action = false;
-    }
-
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (abrir)
         {
-            if (Action == true)
-            {
-                Instruction.SetActive(false);
-                AnimeObject.GetComponent<Animator>().Play("DoorOpen");
-                ThisTrigger.SetActive(false);
-                DoorOpenSound.Play();
-                Action = false;
-            }
+            // Abre la puerta desplazándola en el eje X hacia openPositionX.
+            transform.position = Vector3.Lerp(transform.position, new Vector3(openPositionX, transform.position.y, transform.position.z), Time.deltaTime * speed);
+        }
+        else
+        {
+            // Cierra la puerta desplazándola en el eje X hacia closedPositionX.
+            transform.position = Vector3.Lerp(transform.position, new Vector3(closedPositionX, transform.position.y, transform.position.z), Time.deltaTime * speed);
         }
 
+        if (Input.GetKey(KeyCode.K) && puedeAbrir)
+        {
+            abrir = !abrir; // Cambia el estado de abrir/cerrar al presionar el botón de fuego .
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            puedeAbrir = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            puedeAbrir = false;
+        }
     }
 }

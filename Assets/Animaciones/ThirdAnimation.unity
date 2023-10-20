@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myButton: {fileID: 1085795810}
-  sceneToLoad: PrimerNivel
+  sceneToLoad: CuartoNivel
 --- !u!1 &1398865540
 GameObject:
   m_ObjectHideFlags: 0

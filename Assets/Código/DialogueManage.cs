@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
-
-public class DialogueManager : MonoBehaviour
+public class DialogManager : MonoBehaviour
 {
     public TextMeshProUGUI messageJ;
     public TextMeshProUGUI messageS;
@@ -13,49 +11,80 @@ public class DialogueManager : MonoBehaviour
 
     Message[] currentMessage;
     int activeMessage = 0;
-    public static bool isActive = false;
+    public static bool isActive;
+
+    private Coroutine autoNextMessageCoroutine;
+    public float autoNextMessageDelay = 10f; // Tiempo en segundos antes de cambiar automáticamente el mensaje
 
     public void OpenDialogue(Message[] messages)
     {
         currentMessage = messages;
         activeMessage = 0;
         isActive = true;
-        DisplayMessage(); 
+
+        Debug.Log("Mensajes a mostrar: " + messages.Length);
+        DisplayMessage();
+        backgroundBox.LeanScale(new Vector3(0.25f, 0.25f, 0.25f), 0.25f);
+
+        // Iniciar la corutina para cambiar automáticamente los mensajes
+        autoNextMessageCoroutine = StartCoroutine(AutoNextMessageCoroutine());
     }
 
     void DisplayMessage()
     {
-        Message messageToDisplay = currentMessage[activeMessage];
-        messageJ.text = messageToDisplay.messageJapanese;
-        messageS.text = messageToDisplay.messageSpanish;
-    }
-    
-    public void NextMessage()
-    {
-        activeMessage++;
-        if (activeMessage < currentMessage.Length)
+        // Verificar si activeMessage está dentro de los límites del array
+        if (activeMessage >= 0 && activeMessage < currentMessage.Length)
         {
-            DisplayMessage();
+            Message messageToDisplay = currentMessage[activeMessage];
+            messageJ.text = messageToDisplay.messageJapanese;
+            messageS.text = messageToDisplay.messageSpanish;
         }
         else
         {
-            isActive = false;
+            Debug.LogError("activeMessage está fuera de los límites del array.");
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void NextMessage()
     {
-        
+        // Detener la corutina antes de mostrar el siguiente mensaje manualmente
+        if (autoNextMessageCoroutine != null)
+        {
+            StopCoroutine(autoNextMessageCoroutine);
+        }
+
+        activeMessage++;
+        if(activeMessage < currentMessage.Length)
+        {
+            DisplayMessage();
+            // Reiniciar la corutina después de mostrar el mensaje manualmente
+            autoNextMessageCoroutine = StartCoroutine(AutoNextMessageCoroutine());
+        }
+        else
+        {
+            Debug.Log("Terminó la conversación!");
+            isActive = false;
+            backgroundBox.LeanScale(Vector3.zero, 0.5f);
+        }
     }
 
-    // Update is called once per frame
+    IEnumerator AutoNextMessageCoroutine()
+    {
+        yield return new WaitForSeconds(autoNextMessageDelay);
+        NextMessage();
+    }
+
+    void Start()
+    {
+        backgroundBox.transform.localScale = Vector3.zero;
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isActive == true)
+        if(Input.GetKeyDown(KeyCode.Return) && isActive == true)
         {
             NextMessage();
-
         }
     }
 }
+
